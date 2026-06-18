@@ -156,9 +156,8 @@ TODO-App/
 
 ### Melhoria do projeto
 
-- [ ] Adicionar testes unitários (xUnit, Moq, FluentAssertions)
-- [ ] Implementar paginação
+- [x] Adicionar testes unitários (xUnit, Moq, FluentAssertions)
+- [x] Implementar paginação
 - [ ] Adicionar autenticação JWT
 - [ ] Implementar logging estruturado
-- [ ] Adicionar rate limiting
 - [ ] Containerizar a API com Docker

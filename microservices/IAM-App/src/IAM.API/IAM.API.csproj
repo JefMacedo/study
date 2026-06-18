@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IAM.BuildingBlocks\IAM.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\IAM.Modules.Identity\IAM.Modules.Identity.csproj" />
+    <ProjectReference Include="..\IAM.Modules.Authentication\IAM.Modules.Authentication.csproj" />
+    <ProjectReference Include="..\IAM.Modules.Authorization\IAM.Modules.Authorization.csproj" />
+    <ProjectReference Include="..\IAM.Modules.Audit\IAM.Modules.Audit.csproj" />
+  </ItemGroup>
+
+</Project>
