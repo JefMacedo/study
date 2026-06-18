@@ -6,6 +6,12 @@ using TodoApp.Application.Commands.CompleteTask;
 using TodoApp.Application.Commands.CreateTask;
 using TodoApp.Application.Commands.ReopenTask;
 using TodoApp.Application.Commands.ReopenSubTask;
+using TodoApp.Application.Commands.UpdateTask;
+using TodoApp.Application.Commands.DeleteTask;
+using TodoApp.Application.Commands.ArchiveTask;
+using TodoApp.Application.Commands.UnarchiveTask;
+using TodoApp.Application.Commands.UpdateSubTask;
+using TodoApp.Application.Commands.DeleteSubTask;
 using TodoApp.Application.Queries.GetTask;
 using TodoApp.Application.Queries.GetAllTasks;
 using TodoApp.Application.Queries.FindTask;
@@ -127,6 +133,54 @@ public class TasksController : ControllerBase
     public async Task<IActionResult> ReopenSubTask(Guid taskId, Guid subTaskId)
     {
         var command = new ReopenSubTaskCommand(taskId, subTaskId);
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpPut("{taskId}")]
+    public async Task<IActionResult> UpdateTask(Guid taskId, [FromBody] UpdateTaskCommand command)
+    {
+        if (taskId != command.TaskId) return BadRequest("Mismatched task id.");
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpDelete("{taskId}")]
+    public async Task<IActionResult> DeleteTask(Guid taskId)
+    {
+        var command = new DeleteTaskCommand(taskId);
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpPut("{taskId}/archive")]
+    public async Task<IActionResult> ArchiveTask(Guid taskId)
+    {
+        var command = new ArchiveTaskCommand(taskId);
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpPut("{taskId}/unarchive")]
+    public async Task<IActionResult> UnarchiveTask(Guid taskId)
+    {
+        var command = new UnarchiveTaskCommand(taskId);
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpPut("{taskId}/subtasks/{subTaskId}")]
+    public async Task<IActionResult> UpdateSubTask(Guid taskId, Guid subTaskId, [FromBody] UpdateSubTaskCommand command)
+    {
+        if (taskId != command.TaskId || subTaskId != command.SubTaskId) return BadRequest("Mismatched ids.");
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpDelete("{taskId}/subtasks/{subTaskId}")]
+    public async Task<IActionResult> DeleteSubTask(Guid taskId, Guid subTaskId)
+    {
+        var command = new DeleteSubTaskCommand(taskId, subTaskId);
         await _mediator.Send(command);
         return NoContent();
     }
