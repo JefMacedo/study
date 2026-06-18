@@ -1,13 +1,11 @@
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TodoApp.Domain.Entities;
 
-namespace TodoApp.Application.Interfaces
+namespace TodoApp.Application.Interfaces;
+
+public interface IAppDbContext
 {
-    public interface IAppDbContext
-    {
-        DbSet<TaskItem> Tasks { get; }
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-    }
+    DbSet<TaskItem> Tasks { get; }
+    DbSet<SubTask> SubTasks { get; }
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
