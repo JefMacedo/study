@@ -8,6 +8,9 @@ public class TaskItem
     public DateTime CreatedAt { get; set; }
     public DateTime? DueDate { get; set; }
     public bool IsCompleted { get; set; }
+    public bool IsDeleted { get; set; }
+    public bool IsArchived { get; set; }
+    public DateTime? EditedAt { get; set; }
 
     public ICollection<SubTask> SubTasks { get; set; } = new List<SubTask>();
 }
