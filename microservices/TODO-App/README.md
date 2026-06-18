@@ -143,15 +143,16 @@ TODO-App/
 
 ### API
 
-- [ ] Listar todas as tarefas
-- [ ] Listar tarefa pelo titulo ou por Id
-- [ ] Marcar uma tarefa como concluída
+- [x] Listar todas as tarefas
+- [x] Listar tarefa pelo titulo ou por Id
+- [x] Marcar uma tarefa como concluída
 - [ ] Editar uma tarefa
 - [ ] Excluir uma tarefa
-- [ ] Listar todas as subtasks
-- [ ] Listar uma subtask pelo titulo ou por Id
+- [x] Listar todas as subtasks de uma tarefa
+- [x] Listar uma subtask pelo titulo ou por Id
 - [ ] Editar uma subtask
 - [ ] Excluir uma subtask
+- [ ] Arquivar uma tarefa
 
 ### Melhoria do projeto
 
