@@ -146,13 +146,13 @@ TODO-App/
 - [x] Listar todas as tarefas
 - [x] Listar tarefa pelo titulo ou por Id
 - [x] Marcar uma tarefa como concluída
-- [ ] Editar uma tarefa
-- [ ] Excluir uma tarefa
+- [x] Editar uma tarefa
+- [x] Excluir uma tarefa
 - [x] Listar todas as subtasks de uma tarefa
 - [x] Listar uma subtask pelo titulo ou por Id
-- [ ] Editar uma subtask
-- [ ] Excluir uma subtask
-- [ ] Arquivar uma tarefa
+- [x] Editar uma subtask
+- [x] Excluir uma subtask
+- [x] Arquivar uma tarefa
 
 ### Melhoria do projeto
 
